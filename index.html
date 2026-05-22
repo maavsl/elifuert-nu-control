@@ -114,8 +114,18 @@ h1{
 .card:nth-child(5):before{background:#8338ec}
 
 .emoji{
-  font-size:42px;
-  margin-bottom:16px;
+  width:68px;
+  height:68px;
+  display:grid;
+  place-items:center;
+  font-size:34px;
+  margin-bottom:18px;
+  border-radius:22px;
+  background:linear-gradient(145deg,#ffffff,#e9f6ff);
+  box-shadow:
+    10px 10px 22px rgba(7,59,76,.16),
+    inset 5px 5px 12px rgba(255,255,255,.9),
+    inset -6px -6px 14px rgba(0,0,0,.08);
 }
 
 h2{
@@ -194,3 +204,8 @@ h2{
 
 </body>
 </html>
+.card:nth-child(1) .emoji{background:linear-gradient(145deg,#ffe1e1,#ff8e8e)}
+.card:nth-child(2) .emoji{background:linear-gradient(145deg,#d9f7ff,#6ddcff)}
+.card:nth-child(3) .emoji{background:linear-gradient(145deg,#dcfff4,#62e6bf)}
+.card:nth-child(4) .emoji{background:linear-gradient(145deg,#fff0cf,#ffb347)}
+.card:nth-child(5) .emoji{background:linear-gradient(145deg,#eadcff,#b794ff)}
