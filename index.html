@@ -45,19 +45,39 @@ body{
   margin-bottom:28px;
 }
 
-.hero:after{
-  content:"🌊 🌴 ☀️ 🐚";
+.hero-icons{
   position:absolute;
   right:34px;
   bottom:22px;
-  font-size:34px;
-  opacity:.55;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.hero-icons img{
+  width:42px;
+  height:42px;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 12px rgba(0,0,0,.14));
 }
 
 h1{
   margin:0;
   font-size:48px;
   letter-spacing:-1.5px;
+}
+
+.hero-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.hero-title img{
+  width:68px;
+  height:68px;
+  object-fit:contain;
+  filter:drop-shadow(0 10px 16px rgba(0,0,0,.16));
 }
 
 .hero p{
@@ -84,7 +104,7 @@ h1{
 .card{
   position:relative;
   display:block;
-  min-height:170px;
+  min-height:190px;
   padding:26px;
   border-radius:30px;
   text-decoration:none;
@@ -114,18 +134,16 @@ h1{
 .card:nth-child(5):before{background:#8338ec}
 
 .emoji{
-  width:68px;
-  height:68px;
-  display:grid;
-  place-items:center;
-  font-size:34px;
   margin-bottom:18px;
-  border-radius:22px;
-  background:linear-gradient(145deg,#ffffff,#e9f6ff);
-  box-shadow:
-    10px 10px 22px rgba(7,59,76,.16),
-    inset 5px 5px 12px rgba(255,255,255,.9),
-    inset -6px -6px 14px rgba(0,0,0,.08);
+}
+
+.icon{
+  width:82px;
+  height:82px;
+  object-fit:contain;
+  user-select:none;
+  pointer-events:none;
+  filter:drop-shadow(0 12px 18px rgba(0,0,0,.18));
 }
 
 h2{
@@ -150,6 +168,7 @@ h2{
 @media(max-width:650px){
   h1{font-size:34px}
   .hero{padding:28px}
+  .hero-icons{position:static;margin-top:18px}
 }
 </style>
 </head>
@@ -160,38 +179,49 @@ h2{
 
   <div class="hero">
     <div class="badge">ELI’S HAPPY PLACE · ELIFUERT EDITION</div>
-    <h1>🌴 ELIFUERT CONTROL</h1>
+
+    <div class="hero-title">
+      <img src="assets/icons/palmera.png" alt="">
+      <h1>ELIFUERT CONTROL</h1>
+    </div>
+
     <p>El panel interno para no perder 20 minutos buscando el maldito enlace.</p>
+
+    <div class="hero-icons">
+      <img src="assets/icons/palmera.png" alt="">
+      <img src="assets/icons/sol.png" alt="">
+      <img src="assets/icons/caracola.png" alt="">
+    </div>
   </div>
 
   <div class="grid">
 
     <a class="card" href="https://docs.google.com/spreadsheets/d/1kZYgv49sKkz0qjIL4HqoXbNaVilvRBygHVFkEDIPBPc/edit" target="_blank">
-      <div class="emoji">📄</div>
+      <div class="emoji"><img src="assets/icons/archivo.png" class="icon" alt=""></div>
       <h2>Contratos</h2>
       <div class="small">Base documental y control de contratos.</div>
     </a>
 
     <a class="card" href="https://drive.google.com/drive/folders/1u2h071VjoorpJ74FCJopfyGQ0sRWtpQD" target="_blank">
-      <div class="emoji">📊</div>
+      <div class="emoji"><img src="assets/icons/ingresos.png" class="icon" alt=""></div>
       <h2>Reportes mensuales</h2>
       <div class="small">Informes listos para revisar y enviar.</div>
     </a>
 
     <a class="card" href="https://docs.google.com/spreadsheets/d/1bMYvntwFwdNjLgB5n0TnaS11-RIMKOCWGdldNCIbteI/edit" target="_blank">
-      <div class="emoji">💶</div>
+      <div class="emoji"><img src="assets/icons/nomina.png" class="icon" alt=""></div>
       <h2>Facturas ELIFUERT</h2>
       <div class="small">Facturación, importes y control económico.</div>
     </a>
 
     <a class="card" href="https://docs.google.com/spreadsheets/d/1g9rGNY1gix64--ySmv7NBKVIaJEDR6-c9Ssylo-P0_w/edit" target="_blank">
-      <div class="emoji">🏠</div>
+      <div class="emoji"><img src="assets/icons/home.png" class="icon" alt=""></div>
       <h2>Reporte inquilinos</h2>
       <div class="small">Estado mensual, notas y seguimiento.</div>
     </a>
 
     <a class="card" href="https://docs.google.com/spreadsheets/d/1RvWWMYY8TMXI7hqUS1ICbCI1SEf3Sg4jVENzlPwzn-U/edit" target="_blank">
-      <div class="emoji">📬</div>
+      <div class="emoji"><img src="assets/icons/correo.png" class="icon" alt=""></div>
       <h2>Envío de recibos</h2>
       <div class="small">Recibos, envíos y el ritual mensual.</div>
     </a>
@@ -204,8 +234,3 @@ h2{
 
 </body>
 </html>
-.card:nth-child(1) .emoji{background:linear-gradient(145deg,#ffe1e1,#ff8e8e)}
-.card:nth-child(2) .emoji{background:linear-gradient(145deg,#d9f7ff,#6ddcff)}
-.card:nth-child(3) .emoji{background:linear-gradient(145deg,#dcfff4,#62e6bf)}
-.card:nth-child(4) .emoji{background:linear-gradient(145deg,#fff0cf,#ffb347)}
-.card:nth-child(5) .emoji{background:linear-gradient(145deg,#eadcff,#b794ff)}
