@@ -6,22 +6,25 @@
 <title>ELIFUERT CONTROL</title>
 
 <style>
+
 :root{
   --sea:#00b4d8;
   --sun:#ffd166;
   --coral:#ff6b6b;
   --mint:#06d6a0;
   --deep:#073b4c;
-  --sand:#fff3d6;
 }
 
-*{box-sizing:border-box}
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
   min-height:100vh;
   font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   color:var(--deep);
+
   background:
     radial-gradient(circle at top left, #ffd166 0 130px, transparent 132px),
     radial-gradient(circle at top right, #ff6b6b 0 90px, transparent 92px),
@@ -37,70 +40,160 @@ body{
 .hero{
   position:relative;
   overflow:hidden;
+
   background:rgba(255,255,255,.78);
+
   border:3px solid rgba(255,255,255,.85);
+
   padding:42px;
+
   border-radius:34px;
+
   box-shadow:0 22px 60px rgba(7,59,76,.16);
+
   margin-bottom:28px;
+}
+
+.badge{
+  display:inline-block;
+
+  margin-bottom:14px;
+
+  padding:8px 14px;
+
+  border-radius:999px;
+
+  background:var(--sun);
+
+  font-weight:800;
+
+  font-size:13px;
+}
+
+.hero-title{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.hero-title img{
+  width:70px;
+  height:70px;
+  object-fit:contain;
+
+  filter:drop-shadow(0 10px 16px rgba(0,0,0,.16));
+}
+
+h1{
+  margin:0;
+
+  font-size:58px;
+
+  letter-spacing:-2px;
+
+  line-height:1;
+}
+
+.hero p{
+  margin-top:18px;
+
+  font-size:18px;
 }
 
 .hero-icons{
   position:absolute;
+
   right:34px;
-  bottom:22px;
+  bottom:24px;
+
   display:flex;
   gap:10px;
-  align-items:center;
 }
 
 .hero-icons img{
   width:42px;
   height:42px;
   object-fit:contain;
+
   filter:drop-shadow(0 8px 12px rgba(0,0,0,.14));
-}
-
-h1{
-  margin:0;
-  font-size:48px;
-  letter-spacing:-1.5px;
-}
-
-.hero-title{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.hero-title img{
-  width:68px;
-  height:68px;
-  object-fit:contain;
-  filter:drop-shadow(0 10px 16px rgba(0,0,0,.16));
-}
-
-.hero p{
-  font-size:18px;
-  margin:12px 0 0;
-}
-
-.badge{
-  display:inline-block;
-  margin-bottom:14px;
-  padding:8px 14px;
-  border-radius:999px;
-  background:var(--sun);
-  font-weight:800;
-  font-size:13px;
 }
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:20px;
-  max-width:860px;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:22px;
+
+  max-width:980px;
+
   margin:0 auto;
+}
+
+.card{
+  position:relative;
+
+  display:block;
+
+  min-height:220px;
+
+  padding:30px;
+
+  border-radius:34px;
+
+  text-decoration:none;
+
+  color:var(--deep);
+
+  background:rgba(255,255,255,.88);
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 18px 40px rgba(7,59,76,.14);
+
+  overflow:hidden;
+
+  transition:.2s ease;
+}
+
+.card:hover{
+  transform:translateY(-8px) rotate(-1deg);
+
+  box-shadow:
+    0 28px 60px rgba(7,59,76,.2);
+}
+
+.card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:0;
+  right:0;
+
+  height:8px;
+}
+
+.card:nth-child(1)::before{
+  background:var(--coral);
+}
+
+.card:nth-child(2)::before{
+  background:var(--sea);
+}
+
+.card:nth-child(3)::before{
+  background:var(--mint);
+}
+
+.card:nth-child(4)::before{
+  background:#f77f00;
+}
+
+.card:nth-child(5)::before{
+  background:#8338ec;
 }
 
 .card:nth-child(4){
@@ -111,19 +204,6 @@ h1{
   grid-column:2 / 3;
 }
 
-.card:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  height:8px;
-}
-
-.card:nth-child(1):before{background:var(--coral)}
-.card:nth-child(2):before{background:var(--sea)}
-.card:nth-child(3):before{background:var(--mint)}
-.card:nth-child(4):before{background:#f77f00}
-.card:nth-child(5):before{background:#8338ec}
-
 .emoji{
   margin-bottom:18px;
 }
@@ -131,42 +211,76 @@ h1{
 .icon{
   width:82px;
   height:82px;
+
   object-fit:contain;
-  user-select:none;
-  pointer-events:none;
+
   filter:drop-shadow(0 12px 18px rgba(0,0,0,.18));
 }
 
 h2{
   margin:0;
+
   font-size:23px;
+
   line-height:1.05;
 }
 
 .small{
   margin-top:12px;
-  font-size:14px;
+
+  font-size:15px;
+
   color:#5d7480;
 }
 
 .footer{
-  margin-top:28px;
+  margin-top:34px;
+
   text-align:center;
+
   font-size:14px;
+
   color:#41606d;
 }
 
-@media(max-width:650px){
-  h1{font-size:34px}
-  .hero{padding:28px}
-  .hero-icons{position:static;margin-top:18px}
+@media(max-width:800px){
+
   .grid{
-  grid-template-columns:1fr;
+    grid-template-columns:1fr;
+  }
+
+  .card:nth-child(4),
+  .card:nth-child(5){
+    grid-column:auto;
+  }
+
 }
 
-.card:nth-child(4),
-.card:nth-child(5){
-  grid-column:auto;
+@media(max-width:650px){
+
+  h1{
+    font-size:38px;
+  }
+
+  .hero{
+    padding:28px;
+  }
+
+  .hero-title{
+    align-items:flex-start;
+  }
+
+  .hero-title img{
+    width:56px;
+    height:56px;
+  }
+
+  .hero-icons{
+    position:static;
+
+    margin-top:20px;
+  }
+
 }
 
 </style>
@@ -177,57 +291,118 @@ h2{
 <div class="wrap">
 
   <div class="hero">
-    <div class="badge">ELI’S HAPPY PLACE · ELIFUERT EDITION</div>
 
-    <div class="hero-title">
-      <img src="assets/icons/palmera.png" alt="">
-      <h1>ELIFUERT CONTROL</h1>
+    <div class="badge">
+      ELI’S HAPPY PLACE · ELIFUERT EDITION
     </div>
 
-    <p>El panel interno para no perder 20 minutos buscando el maldito enlace.</p>
+    <div class="hero-title">
+
+      <img src="assets/icons/palmera.png" alt="">
+
+      <h1>ELIFUERT CONTROL</h1>
+
+    </div>
+
+    <p>
+      El panel interno para no perder 20 minutos buscando el maldito enlace.
+    </p>
 
     <div class="hero-icons">
       <img src="assets/icons/palmera.png" alt="">
       <img src="assets/icons/sol.png" alt="">
       <img src="assets/icons/caracola.png" alt="">
     </div>
+
   </div>
 
   <div class="grid">
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1kZYgv49sKkz0qjIL4HqoXbNaVilvRBygHVFkEDIPBPc/edit" target="_blank">
-      <div class="emoji"><img src="assets/icons/archivo.png" class="icon" alt=""></div>
+    <a class="card"
+       href="https://docs.google.com/spreadsheets/d/1kZYgv49sKkz0qjIL4HqoXbNaVilvRBygHVFkEDIPBPc/edit"
+       target="_blank">
+
+      <div class="emoji">
+        <img src="assets/icons/archivo.png" class="icon" alt="">
+      </div>
+
       <h2>Contratos</h2>
-      <div class="small">Base documental y control de contratos.</div>
+
+      <div class="small">
+        Base documental y control de contratos.
+      </div>
+
     </a>
 
-    <a class="card" href="https://drive.google.com/drive/folders/1u2h071VjoorpJ74FCJopfyGQ0sRWtpQD" target="_blank">
-      <div class="emoji"><img src="assets/icons/ingresos.png" class="icon" alt=""></div>
+    <a class="card"
+       href="https://drive.google.com/drive/folders/1u2h071VjoorpJ74FCJopfyGQ0sRWtpQD"
+       target="_blank">
+
+      <div class="emoji">
+        <img src="assets/icons/ingresos.png" class="icon" alt="">
+      </div>
+
       <h2>Reportes mensuales</h2>
-      <div class="small">Informes listos para revisar y enviar.</div>
+
+      <div class="small">
+        Informes listos para revisar y enviar.
+      </div>
+
     </a>
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1bMYvntwFwdNjLgB5n0TnaS11-RIMKOCWGdldNCIbteI/edit" target="_blank">
-      <div class="emoji"><img src="assets/icons/nomina.png" class="icon" alt=""></div>
+    <a class="card"
+       href="https://docs.google.com/spreadsheets/d/1bMYvntwFwdNjLgB5n0TnaS11-RIMKOCWGdldNCIbteI/edit"
+       target="_blank">
+
+      <div class="emoji">
+        <img src="assets/icons/nomina.png" class="icon" alt="">
+      </div>
+
       <h2>Facturas ELIFUERT</h2>
-      <div class="small">Facturación, importes y control económico.</div>
+
+      <div class="small">
+        Facturación, importes y control económico.
+      </div>
+
     </a>
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1g9rGNY1gix64--ySmv7NBKVIaJEDR6-c9Ssylo-P0_w/edit" target="_blank">
-      <div class="emoji"><img src="assets/icons/home.png" class="icon" alt=""></div>
+    <a class="card"
+       href="https://docs.google.com/spreadsheets/d/1g9rGNY1gix64--ySmv7NBKVIaJEDR6-c9Ssylo-P0_w/edit"
+       target="_blank">
+
+      <div class="emoji">
+        <img src="assets/icons/home.png" class="icon" alt="">
+      </div>
+
       <h2>Reporte inquilinos</h2>
-      <div class="small">Estado mensual, notas y seguimiento.</div>
+
+      <div class="small">
+        Estado mensual, notas y seguimiento.
+      </div>
+
     </a>
 
-    <a class="card" href="https://docs.google.com/spreadsheets/d/1RvWWMYY8TMXI7hqUS1ICbCI1SEf3Sg4jVENzlPwzn-U/edit" target="_blank">
-      <div class="emoji"><img src="assets/icons/correo.png" class="icon" alt=""></div>
+    <a class="card"
+       href="https://docs.google.com/spreadsheets/d/1RvWWMYY8TMXI7hqUS1ICbCI1SEf3Sg4jVENzlPwzn-U/edit"
+       target="_blank">
+
+      <div class="emoji">
+        <img src="assets/icons/correo.png" class="icon" alt="">
+      </div>
+
       <h2>Envío de recibos</h2>
-      <div class="small">Recibos, envíos y el ritual mensual.</div>
+
+      <div class="small">
+        Recibos, envíos y el ritual mensual.
+      </div>
+
     </a>
 
   </div>
 
-  <div class="footer">Hecho para abrirlo, pinchar y seguir viviendo 🏖️</div>
+  <div class="footer">
+    Hecho para abrirlo, pinchar y seguir viviendo 🏖️
+  </div>
 
 </div>
 
