@@ -97,27 +97,18 @@ h1{
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(3, 1fr);
   gap:20px;
+  max-width:860px;
+  margin:0 auto;
 }
 
-.card{
-  position:relative;
-  display:block;
-  min-height:190px;
-  padding:26px;
-  border-radius:30px;
-  text-decoration:none;
-  color:var(--deep);
-  background:white;
-  box-shadow:0 16px 34px rgba(7,59,76,.13);
-  overflow:hidden;
-  transition:.18s ease;
+.card:nth-child(4){
+  grid-column:1 / 2;
 }
 
-.card:hover{
-  transform:translateY(-6px) rotate(-1deg);
-  box-shadow:0 24px 44px rgba(7,59,76,.2);
+.card:nth-child(5){
+  grid-column:2 / 3;
 }
 
 .card:before{
@@ -169,7 +160,15 @@ h2{
   h1{font-size:34px}
   .hero{padding:28px}
   .hero-icons{position:static;margin-top:18px}
+  .grid{
+  grid-template-columns:1fr;
 }
+
+.card:nth-child(4),
+.card:nth-child(5){
+  grid-column:auto;
+}
+
 </style>
 </head>
 
